@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Joshua - Chick magnet ng laguna</title>
+  <meta name="description" content="Do you know why I’m Handsome? Because God never makes a mistake. #SmallThings!">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="canonical" href="" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --clr-neon: #ff7e00;
+      --clr-bg: #020202;
+    }
+
+    ::selection {
+      background: var(--clr-neon);
+      color: #fff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 10px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      font-family: 'Oswald', sans-serif;
+      color: #fff;
+
+      background-color: #141114;
+      background-image: linear-gradient(335deg, black 23px, transparent 23px),
+        linear-gradient(155deg, black 23px, transparent 23px),
+        linear-gradient(335deg, black 23px, transparent 23px),
+        linear-gradient(155deg, black 23px, transparent 23px);
+      background-size: 58px 58px;
+      background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+    }
+
+    main {
+      width: 100%;
+    }
+
+    .font-zoo { 
+      font-family: 'Zen Tokyo Zoo', cursive;
+    }
+
+    .content-wrap {
+      text-align: center;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    #particles-js {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+
+    .img-wrap {
+      text-align: center;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    img {
+      width: auto;
+    }
+
+    .neon {
+      margin: 0 0 3rem;
+      font-size: 6rem;
+      font-weight: 400 !important;
+      text-transform: uppercase;
+      color: #ffe8d1;
+      text-shadow: 0 0 0 transparent,
+                    0 0 10px var(--clr-neon),
+                    0 0 20px rgba(255, 126, 0, 0.5),
+                    0 0 40px var(--clr-neon),
+                    0 0 100px var(--clr-neon),
+                    0 0 200px var(--clr-neon),
+                    0 0 300px var(--clr-neon),
+                    0 0 500px var(--clr-neon),
+                    0 0 1000px var(--clr-neon);
+      animation: animate 3s infinite alternate;
+    }
+
+    @keyframes animate {
+      40% {
+        opacity: 1;
+      }
+      42% {
+        opacity: 0.8;
+      }
+      43% {
+        opacity: 1;
+      }
+      45% {
+        opacity: 0.3;
+      }
+      46% {
+        opacity: 1;
+      }
+    }
+
+    .btn {
+      color: var(--clr-neon);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 2rem;
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      border: var(--clr-neon) 0.125em solid;
+      padding: 0.25em 1em;
+      border-radius: 0.25em;
+      text-shadow: 
+        0 0 .20em rgb(0, 0, 0,-.5),
+        0 0 .30em var(--clr-neon);
+      box-shadow: 
+        inset 0 0 .5em var(--clr-neon),
+              0 0 .5em var(--clr-neon);
+    }
+
+    .btn span {
+      z-index: 1;
+      position: relative;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 30%;
+      height: 100%;
+      background: var(--clr-neon);
+      transform: 
+        translateX(-50%)
+        perspective(0.2em)
+        rotateX(10deg) 
+        scale(1.3, 0.40);
+      filter: blur(0.5em);
+      opacity: 0.6;
+      pointer-events: none;
+      transition: opacity 100ms linear;
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--clr-neon);
+      box-shadow: 0 0 2em var(--clr-neon);
+      z-index: 0;
+      opacity: 0;
+      transition: opacity 100ms linear;
+    }
+
+    .btn:hover::after {
+      opacity: 1;
+    }
+    .btn:hover, .btn:focus {
+      color: white;
+    }
+    .btn:hover::before {
+      opacity: 0.8;
+    }
+
+    .wrap {
+      position: relative;
+      width: 80%;
+    }
+
+    .wrap:hover > .front {
+      transform: perspective(600px) rotateY(-180deg);
+    }
+
+    .wrap:hover > .back {
+      transform: perspective(600px) rotateY(0deg);
+    }
+
+    .front {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      backface-visibility: hidden;
+      transition: transform .6s linear;
+      z-index: 1;
+      position: relative;
+      transform: perspective(600px) rotateY(0deg);
+    }
+
+    .front img {
+      object-fit: cover;
+      margin-bottom: 0;
+      display: block;
+      width: 100%;
+    }
+
+    .back {
+      top:0;
+      left: 0;
+      z-index: 0;
+      position: absolute;
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      background: var(--clr-neon);
+      transition: transform .6s linear;
+      transform: perspective(600px) rotateY(180deg);
+
+      display: grid;
+      place-items: center;
+    }
+
+    .back-content {
+      display: block;
+      max-width: 100%;
+    }
+
+    .back-content img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      object-position: top center;
+      -webkit-box-shadow: 0 4px 10px -4px #7a5533;
+      -moz-box-shadow: 0 4px 10px -4px #7a5533;
+      box-shadow: 0 4px 10px -4px #7a5533;
+    }
+
+    h2,h3 {
+      margin: 0;
+      line-height: 1.2em;
+    }
+    
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    @media (min-width:768px) {
+      html {
+        font-size: 14px;
+      }
+
+      .wrap {
+        width: 500px;
+      }
+
+      .neon {
+        font-size: 8rem;
+      }
+
+      .btn::before {
+        width: 40%;
+      }
+
+      .back-content img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    @media (min-width:1024px) {
+      html {
+        font-size: 16px;
+      }
+
+      .neon {
+        font-size: 10rem;
+      }
+
+      .btn::before {
+        width: 60%;
+      }
+
+      h2 {
+        font-size: 3rem;
+      }
+
+      .back-content img {
+        width: 200px;
+        height: 200px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="content-wrap">
+      <div data-aos="fade-up" data-aos-delay="500">
+        <h1 class="font-zoo neon">CHICK MAGNET</h1>
+        <a href="#more" class="btn"><span class="font-zoo">Now Showing</span></a>
+      </div>
+      
+    </div>
+    <div id="more" class="img-wrap">
+      <div class="wrap">
+        <div class="front">
+          <img src="chick-magnet.jpg" alt="Chick boy ako">
+        </div>
+        <div class="back">
+          <div class="back-content">
+
+            <img src="me-and-my-bestfriend.jpg" alt="me with best buddy">
+            <p>STARRING</p>
+            <h2>Joshua D. Loyal</h2>
+            <h3>Kung naidodonate lang sana ang kagwapuhan,<br>Marami na sana kong natulungan.</h3>
+            <p>
+              PREMIERE NIGHT <br>
+              <a href="https://goo.gl/maps/1xG8rYV3uhSRszrC6" target="_blank">
+                <lord-icon
+                    src="https://cdn.lordicon.com/zzcjjxew.json"
+                    trigger="hover"
+                    colors="primary:#ffffff,secondary:#ffffff"
+                    style="width:50px;height:50px">
+                </lord-icon>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+  
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
