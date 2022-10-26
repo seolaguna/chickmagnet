@@ -1,0 +1,2 @@
+Allow: *
+Sitemap: https://seolaguna.github.io/joshuachickmagnet/sitemap.xml
